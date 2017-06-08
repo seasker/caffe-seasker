@@ -152,6 +152,7 @@ class Function(object):
                 assign_proto(layer, k, v)
             else:
                 try:
+                    # _param_names dict store for example Data:data, Layer's property field as data_param
                     assign_proto(getattr(layer,
                         _param_names[self.type_name] + '_param'), k, v)
                 except (AttributeError, KeyError):
